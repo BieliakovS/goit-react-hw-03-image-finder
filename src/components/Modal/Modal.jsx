@@ -17,9 +17,15 @@ class Modal extends Component {
     }
   };
 
+  handleOverlayClick = e => {
+    if (e.target === e.currentTarget) {
+      this.props.onClose();
+    }
+  };
+
   render() {
     return (
-      <div className={css.Overlay} onClick={this.props.onClose}>
+      <div className={css.Overlay} onClick={this.handleOverlayClick}>
         <div className={css.Modal}>
           <img src={this.props.image} alt="" />
         </div>
